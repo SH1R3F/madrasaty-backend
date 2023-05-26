@@ -44,5 +44,8 @@
     "Read user": "Read user",
     "Update user": "Update user",
     "Delete user": "Delete user",
-    "Enter Role Name": "Enter Role Name"
+    "Enter Role Name": "Enter Role Name",
+    "Profile": "Profile",
+    "Settings": "Settings",
+    "Logout": "Logout"
 }

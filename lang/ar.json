@@ -44,5 +44,8 @@
     "Read user": "عرض  مستخدم",
     "Update user": "تحديث مستخدم",
     "Delete user": "حذف مستخدم",
-    "Enter Role Name": "أدخل اسم الدور"
+    "Enter Role Name": "أدخل اسم الدور",
+    "Profile": "الملف الشخصي",
+    "Settings": "الإعدادات",
+    "Logout": "تسجيل خروج"
 }
