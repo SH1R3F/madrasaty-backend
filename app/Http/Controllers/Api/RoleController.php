@@ -50,8 +50,8 @@ class RoleController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id)
+    public function destroy(Role $role)
     {
-        //
+        $role->delete();
     }
 }
