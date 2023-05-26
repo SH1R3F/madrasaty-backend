@@ -1,0 +1,48 @@
+{
+    "Welcome 👋🏻": "مرحباً 👋🏻",
+    "Please sign-in to your account to start using our service": "يرجى تسجيل الدخول بحسابك لبدء استخدام خدماتنا",
+    "Please create an account to start using our service": "يرجى إنشاء حساب لبدء استخدام خدماتنا",
+    "Email": "البريد الإلكتروني",
+    "Password": "كلمة المرور",
+    "Forgot Password?": "نسيت كلمة المرور؟",
+    "New on our platform?": "جديد على المنصة؟",
+    "Create an account": "إنشاء حساب",
+    "Or": "أو",
+    "Remember me": "تذكرني",
+    "Login": "دخول",
+    "Name": "الاسم",
+    "I agree to": "أوافق على",
+    "privacy policy & terms": "الشروط والأحكام",
+    "Sign up": "تسجيل",
+    "Already have an account?": "لديك حساب بالفعل؟",
+    "Sign in": "تسجيل دخول",
+    "Dashboard": "لوحة التحكم",
+    "Analytics": "إحصائيات",
+    "Site management": "إدارة الموقع",
+    "Roles & Permissions": "الأدوار والصلاحيات",
+    "Permissions": "الصلاحيات",
+    "Roles": "الأدوار",
+    "Roles List": "قائمة الأدوار",
+    "A role provided access to predefined menus and features so that depending on assigned role an administrator can have access to what he need": "يوفر الدور الوصول إلى القوائم والميزات المحددة مسبقًا بحيث يمكن للمسؤول ، بناءً على الدور المعين ، الوصول إلى ما يحتاج إليه",
+    "Total {number} users": "إجمالى {number} مستخدمين",
+    "Edit Role": "تعديل الدور",
+    "Add New Role": "إضافة دور جديد",
+    "Add role, if it doesn't exist.": "أضف دور إن لم تجد ماتبحث عنه",
+    "Set Role Permissions": "تعديل صلاحيات الدور",
+    "Role Permissions": "صلاحيات الدور",
+    "Administrator Access": "التحكم الكامل",
+    "Submit": "حفظ",
+    "Cancel": "إلغاء",
+    "Select All": "تحديد الكل",
+    "Role Name": "اسم الدور",
+    "Create role": "إنشاء دور",
+    "Read role": "عرض دور",
+    "Update role": "تحديث دور",
+    "Delete role": "حذف دور",
+    "Users": "المستخدمين",
+    "Create user": "إنشاء مستخدم",
+    "Read user": "عرض  مستخدم",
+    "Update user": "تحديث مستخدم",
+    "Delete user": "حذف مستخدم",
+    "Enter Role Name": "أدخل اسم الدور"
+}
