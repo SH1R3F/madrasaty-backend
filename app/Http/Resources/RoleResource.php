@@ -22,7 +22,9 @@ class RoleResource extends JsonResource
                 'id'          => $this->id,
                 'name'        => $this->name,
                 'permissions' => $this->perms($this->permissions)
-            ]
+            ],
+            'editable'  => $request->user()->can('update', $this->resource),
+            'deletable' => $request->user()->can('delete', $this->resource),
         ];
     }
 
