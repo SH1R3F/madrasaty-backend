@@ -28,3 +28,11 @@ Route::prefix('auth')->name('auth.')->group(function () {
     Route::post('register', [AuthController::class, 'register']);
     Route::post('login', [AuthController::class, 'login']);
 });
+
+
+/**
+ * Must be authenticated routes
+ */
+Route::middleware('auth:sanctum')->group(function () {
+    Route::resource('roles', RoleController::class)->except(['edit', 'create']);
+});
