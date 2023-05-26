@@ -3,6 +3,7 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Api\ApiController;
+use App\Http\Controllers\Api\Auth\AuthController;
 
 /*
 |--------------------------------------------------------------------------
@@ -19,3 +20,11 @@ use App\Http\Controllers\Api\ApiController;
  * Localization
  */
 Route::get('localization', [ApiController::class, 'localization']);
+
+/**
+ * Authentication routes
+ */
+Route::prefix('auth')->name('auth.')->group(function () {
+    Route::post('register', [AuthController::class, 'register']);
+    Route::post('login', [AuthController::class, 'login']);
+});
