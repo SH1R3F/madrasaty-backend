@@ -44,5 +44,6 @@ Route::middleware('auth:sanctum')->group(function () {
     /**
      * Users endpoints
      */
+    Route::get('users/export', [UserController::class, 'export']);
     Route::resource('users', UserController::class)->except(['edit', 'create']);
 });
