@@ -83,5 +83,7 @@
     "Add User": "Add User",
     "User deleted successfully": "User deleted successfully",
     "User updated successfully": "User updated successfully",
-    "User created successfully": "User created successfully"
+    "User created successfully": "User created successfully",
+    "Details": "Details",
+    "Deactive": "Deactive"
 }

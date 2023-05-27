@@ -83,5 +83,7 @@
     "Add User": "إضافة مستخدم",
     "User deleted successfully": "تم حذف المستخدم بنجاح",
     "User updated successfully": "تم تعديل المستخدم بنجاح",
-    "User created successfully": "تم إنشاء المستخدم بنجاح"
+    "User created successfully": "تم إنشاء المستخدم بنجاح",
+    "Details": "التفاصيل",
+    "Deactive": "إلغاء التفعيل"
 }

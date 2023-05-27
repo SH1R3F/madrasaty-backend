@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Api;
 use App\Models\User;
 use Illuminate\Http\Request;
 use App\Http\Requests\UserRequest;
+use Spatie\Permission\Models\Role;
 use App\Http\Controllers\Controller;
 use App\Http\Resources\UserResource;
 
@@ -13,7 +14,7 @@ class UserController extends Controller
 
     public function __construct()
     {
-        $this->authorizeResource(User::class, 'role');
+        $this->authorizeResource(User::class, 'user');
     }
 
     /**
@@ -54,6 +55,8 @@ class UserController extends Controller
         $data['password'] = bcrypt($data['password']);
         $user = User::create($data);
 
+        $user->assignRole(Role::find($data['role']));
+
         return response()->json([
             'status'  => 'success',
             'message' => __('User created successfully'),
@@ -64,9 +67,9 @@ class UserController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(string $id)
+    public function show(User $user)
     {
-        //
+        return new UserResource($user);
     }
 
     /**
@@ -88,8 +91,12 @@ class UserController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id)
+    public function destroy(User $user)
     {
-        //
+        $user->delete();
+        return response()->json([
+            'status'  => 'success',
+            'message' => __('User deleted successfully')
+        ]);
     }
 }
