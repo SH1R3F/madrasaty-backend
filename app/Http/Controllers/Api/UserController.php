@@ -24,7 +24,7 @@ class UserController extends Controller
     {
         $users = User::filter($request)
             ->search($request->q, ['name', 'email'])
-            ->orderBy('id', 'DESC')
+            ->order($request->options['sortBy'] ?? [])
             ->paginate($request->options['itemsPerPage'] ?? 10, ['*'], 'page', $request->options['page'] ?? 1)
             ->withQueryString();
 
