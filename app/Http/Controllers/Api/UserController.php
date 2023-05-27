@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Api;
 
 use App\Models\User;
 use Illuminate\Http\Request;
+use App\Http\Requests\UserRequest;
 use App\Http\Controllers\Controller;
 use App\Http\Resources\UserResource;
 
@@ -22,6 +23,7 @@ class UserController extends Controller
     {
         $users = User::filter($request)
             ->search($request->q, ['name', 'email'])
+            ->orderBy('id', 'DESC')
             ->paginate($request->options['itemsPerPage'] ?? 10, ['*'], 'page', $request->options['page'] ?? 1)
             ->withQueryString();
 
@@ -46,9 +48,17 @@ class UserController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(UserRequest $request)
     {
-        //
+        $data = $request->validated();
+        $data['password'] = bcrypt($data['password']);
+        $user = User::create($data);
+
+        return response()->json([
+            'status'  => 'success',
+            'message' => __('User created successfully'),
+            'user'    => new UserResource($user)
+        ]);
     }
 
     /**
