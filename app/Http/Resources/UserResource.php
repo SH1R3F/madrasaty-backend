@@ -18,7 +18,6 @@ class UserResource extends JsonResource
             parent::toArray($request),
             [
                 'fullName' => $this->name,
-                'username' => $this->username,
                 'avatar'   => asset($this->avatar ?? 'assets/img/user.webp'),
                 'role'     => $this->getRoleNames()[0] ?? null
             ]
