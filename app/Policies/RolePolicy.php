@@ -23,7 +23,7 @@ class RolePolicy
             return false;
         }
 
-        if ($user->hasRole('superadmin', 'sanctum')) {
+        if ($user->hasRole('superadmin')) {
             return true;
         }
     }
