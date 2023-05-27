@@ -48,5 +48,8 @@
     "Profile": "الملف الشخصي",
     "Settings": "الإعدادات",
     "Logout": "تسجيل خروج",
-    "Roles & Users": "الأدوار والمستخدمين"
+    "Roles & Users": "الأدوار والمستخدمين",
+    "Role deleted successfully": "تم حذف الدور بنجاح",
+    "Role updated successfully": "تم تعديل الدور بنجاح",
+    "Role created successfully": "تم إنشاء الدور بنجاح"
 }

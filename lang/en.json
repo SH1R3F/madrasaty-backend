@@ -48,5 +48,8 @@
     "Profile": "Profile",
     "Settings": "Settings",
     "Logout": "Logout",
-    "Roles & Users": "Roles & Users"
+    "Roles & Users": "Roles & Users",
+    "Role deleted successfully": "Role deleted successfully",
+    "Role updated successfully": "Role updated successfully",
+    "Role created successfully": "Role created successfully"
 }
