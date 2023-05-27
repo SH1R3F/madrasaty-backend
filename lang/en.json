@@ -85,5 +85,7 @@
     "User updated successfully": "User updated successfully",
     "User created successfully": "User created successfully",
     "Details": "Details",
-    "Deactive": "Deactive"
+    "Deactive": "Deactive",
+    "Personal information": "Personal information",
+    "Leave password empty in case you don't want to change it": "Leave password empty in case you don't want to change it"
 }
