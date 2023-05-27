@@ -4,6 +4,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Api\ApiController;
 use App\Http\Controllers\Api\RoleController;
+use App\Http\Controllers\Api\UserController;
 use App\Http\Controllers\Api\Auth\AuthController;
 
 /*
@@ -35,5 +36,13 @@ Route::prefix('auth')->name('auth.')->group(function () {
  * Must be authenticated routes
  */
 Route::middleware('auth:sanctum')->group(function () {
+    /**
+     * Roles endpoints
+     */
     Route::resource('roles', RoleController::class)->except(['edit', 'create']);
+
+    /**
+     * Users endpoints
+     */
+    Route::resource('users', UserController::class)->except(['edit', 'create']);
 });
