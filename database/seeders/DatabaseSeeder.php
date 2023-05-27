@@ -14,12 +14,12 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-        // \App\Models\User::factory(10)->create();
-
         $superadmin = \App\Models\User::where('email', 'superadmin@example.test')->first() ?? \App\Models\User::factory()->create([
             'name' => 'Superadmin User',
             'email' => 'superadmin@example.test',
         ]);
+
+        \App\Models\User::factory(10)->create();
 
         // Seed roles and permissions
         $this->call(AuthorizationSeeder::class);
