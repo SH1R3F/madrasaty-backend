@@ -33,7 +33,12 @@ class RoleController extends Controller
     public function store(RoleRequest $request, RoleService $service)
     {
         $role = $service->store($request->all());
-        return new RoleResource($role);
+
+        return response()->json([
+            'status'  => 'success',
+            'message' => __('Role created successfully'),
+            'role'    => new RoleResource($role)
+        ]);
     }
 
     /**
@@ -50,7 +55,12 @@ class RoleController extends Controller
     public function update(RoleRequest $request, Role $role, RoleService $service)
     {
         $service->update($request->all(), $role);
-        return new RoleResource($role);
+
+        return response()->json([
+            'status'  => 'success',
+            'message' => __('Role updated successfully'),
+            'role'    => new RoleResource($role)
+        ]);
     }
 
     /**
@@ -59,5 +69,9 @@ class RoleController extends Controller
     public function destroy(Role $role)
     {
         $role->delete();
+        return response()->json([
+            'status'  => 'success',
+            'message' => __('Role deleted successfully')
+        ]);
     }
 }
