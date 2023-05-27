@@ -74,5 +74,14 @@
     "Showing {start} to {end} of {total} entries": "Showing {start} to {end} of {total} entries",
     "Active": "Active",
     "Inactive": "Inactive",
-    "No role": "No role"
+    "No role": "No role",
+    "User": "User",
+    "Role": "Role",
+    "Status": "Status",
+    "Actions": "Actions",
+    "Full Name": "Full Name",
+    "Add User": "Add User",
+    "User deleted successfully": "User deleted successfully",
+    "User updated successfully": "User updated successfully",
+    "User created successfully": "User created successfully"
 }

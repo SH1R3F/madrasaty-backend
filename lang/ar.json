@@ -74,5 +74,14 @@
     "Showing {start} to {end} of {total} entries": "عرض {start} لـ {end} من {total} مدخلات",
     "Active": "فعال",
     "Inactive": "غير فعال",
-    "No role": "بلا دور"
+    "No role": "بلا دور",
+    "User": "المستخدم",
+    "Role": "الدور",
+    "Status": "الحالة",
+    "Actions": "إجراءات",
+    "Full Name": "الاسم بالكامل",
+    "Add User": "إضافة مستخدم",
+    "User deleted successfully": "تم حذف المستخدم بنجاح",
+    "User updated successfully": "تم تعديل المستخدم بنجاح",
+    "User created successfully": "تم إنشاء المستخدم بنجاح"
 }
