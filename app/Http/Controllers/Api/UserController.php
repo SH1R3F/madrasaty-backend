@@ -55,7 +55,7 @@ class UserController extends Controller
         $data['password'] = bcrypt($data['password']);
         $user = User::create($data);
 
-        $user->assignRole(Role::find($data['role']));
+        $user->assignRole(Role::find($data['role_id']));
 
         return response()->json([
             'status'  => 'success',
@@ -83,9 +83,22 @@ class UserController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(UserRequest $request, User $user)
     {
-        //
+        $data = $request->validated();
+        if (isset($data['password'])) {
+            $data['password'] = bcrypt($data['password']);
+        }
+
+        $user->update($data);
+
+        $user->syncRoles($data['role_id']);
+
+        return response()->json([
+            'status'  => 'success',
+            'message' => __('User updated successfully'),
+            'user'    => new UserResource($user)
+        ]);
     }
 
     /**

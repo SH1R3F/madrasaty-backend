@@ -34,8 +34,13 @@ class UserRequest extends FormRequest
                     Rule::unique('users', 'email')->ignore($this->user),
                 )
             ],
-            'role'     => ['required', 'numeric', 'exists:roles,id'],
-            'password' => ['required', 'string', 'min:8', 'max:255']
+            'role_id'  => ['required', 'numeric', 'exists:roles,id'],
+            'password' => [
+                Rule::when(request()->isMethod('POST'), 'required', 'nullable'),
+                'string',
+                'min:8',
+                'max:255'
+            ]
         ];
     }
 }

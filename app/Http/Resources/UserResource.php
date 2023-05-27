@@ -19,7 +19,8 @@ class UserResource extends JsonResource
             [
                 'fullName' => $this->name,
                 'avatar'   => asset($this->avatar ?? 'assets/img/user.webp'),
-                'role'     => $this->getRoleNames()[0] ?? null,
+                'role'     => $this->roles->first()?->name ?? null,
+                'role_id'  => $this->roles->first()?->id ?? null,
             ]
         );
     }
