@@ -3,9 +3,11 @@
 namespace App\Http\Controllers\Api;
 
 use App\Models\Student;
+use App\Models\Classroom;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\StudentRequest;
+use App\Http\Resources\ClassroomResource;
 use App\Http\Resources\StudentResource;
 
 class StudentController extends Controller
@@ -21,12 +23,16 @@ class StudentController extends Controller
      */
     public function index(Request $request)
     {
-        $students = Student::search($request->q, ['name'])
+        $students = Student::with('classroom')
+            ->filter($request)
+            ->search($request->q, ['name'])
             ->order($request->options['sortBy'] ?? [])
             ->paginate($request->options['itemsPerPage'] ?? 10, ['*'], 'page', $request->options['page'] ?? 1)
             ->withQueryString();
 
-        return StudentResource::collection($students);
+        return StudentResource::collection($students)->additional([
+            'classrooms' => ClassroomResource::collection(Classroom::all())
+        ]);
     }
 
     /**
