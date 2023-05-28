@@ -27,7 +27,7 @@ class NoteController extends Controller
     {
         $students = Note::with('classroom', 'student', 'user')
             ->filter($request)
-            ->search($request->q, ['name', 'points'])
+            ->search($request->q, ['note', 'points'])
             ->order($request->options['sortBy'] ?? [])
             ->paginate($request->options['itemsPerPage'] ?? 10, ['*'], 'page', $request->options['page'] ?? 1)
             ->withQueryString();
@@ -44,6 +44,9 @@ class NoteController extends Controller
     public function store(NoteRequest $request)
     {
         $data = $request->validated();
+        if (empty($data['classroom_id'])) {
+            $data['classroom_id'] = Student::find($data['student_id'])->classroom_id;
+        }
         $note = $request->user()->notes()->create($data);
 
         return response()->json([
