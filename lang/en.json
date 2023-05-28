@@ -107,5 +107,8 @@
     "Edit Classroom": "Edit Classroom",
     "Students related to this classroom": "Students related to this classroom",
     "Students": "Students",
-    "Student": "Student"
+    "Student": "Student",
+    "Student deleted successfully": "Student deleted successfully",
+    "Student updated successfully": "Student updated successfully",
+    "Student created successfully": "Student created successfully"
 }

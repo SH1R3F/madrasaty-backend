@@ -107,5 +107,8 @@
     "Edit Classroom": "تعديل الفصل",
     "Students related to this classroom": "الطلاب المسجلين بالفصل",
     "Students": "الطلاب",
-    "Student": "الطالب"
+    "Student": "الطالب",
+    "Student deleted successfully": "تم حذف الطالب بنجاح",
+    "Student updated successfully": "تم تعديل الطالب بنجاح",
+    "Student created successfully": "تم إنشاء الطالب بنجاح"
 }
