@@ -171,6 +171,8 @@ return [
         'time'                  => 'الوقت',
         'available'             => 'مُتاح',
         'size'                  => 'الحجم',
-        'role'                  => 'الدور'
+        'role'                  => 'الدور',
+        'classroom_id'          => 'الفصل',
+        'student_id'            => 'الطالب',
     ]
 ];

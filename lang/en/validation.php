@@ -179,6 +179,9 @@ return [
     |
     */
 
-    'attributes' => [],
+    'attributes' => [
+        'classroom_id'          => 'Classroom',
+        'student_id'            => 'Student',
+    ],
 
 ];

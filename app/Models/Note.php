@@ -24,7 +24,9 @@ class Note extends Model
      */
     public function scopeFilter(Builder $query, Request $request)
     {
-        $query->when($request->classroom, fn ($query, $classroom) => $query->where('classroom_id', $classroom));
+        $query
+            ->when($request->classroom, fn ($query, $classroom) => $query->where('classroom_id', $classroom))
+            ->when($request->student, fn ($query, $student) => $query->where('student_id', $student));
     }
 
     // The user created this note
