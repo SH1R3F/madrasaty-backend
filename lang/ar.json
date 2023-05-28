@@ -110,5 +110,9 @@
     "Student": "الطالب",
     "Student deleted successfully": "تم حذف الطالب بنجاح",
     "Student updated successfully": "تم تعديل الطالب بنجاح",
-    "Student created successfully": "تم إنشاء الطالب بنجاح"
+    "Student created successfully": "تم إنشاء الطالب بنجاح",
+    "Select Classroom": "إختر الفصل",
+    "Add Student": "إضافة طالب",
+    "Select classroom": "إختر الفصل",
+    "Add New Student": "إضافة طالب"
 }

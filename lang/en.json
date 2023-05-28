@@ -110,5 +110,9 @@
     "Student": "Student",
     "Student deleted successfully": "Student deleted successfully",
     "Student updated successfully": "Student updated successfully",
-    "Student created successfully": "Student created successfully"
+    "Student created successfully": "Student created successfully",
+    "Select Classroom": "Select Classroom",
+    "Add New Student": "Add New Student",
+    "Add Student": "Add Student",
+    "Select classroom": "Select classroom"
 }
