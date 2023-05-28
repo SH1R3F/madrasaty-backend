@@ -98,5 +98,11 @@
     "You are not authorized!": "You are not authorized!",
     "Back to Home": "Back to Home",
     "You don't have permission to access this page. Go Home!": "You don't have permission to access this page. Go Home!",
-    "Coming Soon": "Coming Soon"
+    "Coming Soon": "Coming Soon",
+    "Add New Classroom": "Add New Classroom",
+    "Points": "Points",
+    "Add Classroom": "Add Classroom",
+    "This field is required": "This field is required",
+    "This field must be an integer": "This field must be an integer",
+    "Edit Classroom": "Edit Classroom"
 }

@@ -60,7 +60,7 @@ class ClassroomController extends Controller
     {
         $data = $request->validated();
 
-        $classroom->update($data);
+        $classroom->update(['name' => $data['name']]);
 
         return response()->json([
             'status'    => 'success',

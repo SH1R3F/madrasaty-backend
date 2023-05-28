@@ -98,5 +98,11 @@
     "You are not authorized!": "غير مسموح لك بالدخول!",
     "Back to Home": "عودة للرئيسية",
     "You don't have permission to access this page. Go Home!": "ليس لديك صلاحيات للدخول لهذه الصفحة!",
-    "Coming Soon": "قريبًا"
+    "Coming Soon": "قريبًا",
+    "Add New Classroom": "إضافة فصل جديد",
+    "Points": "النقاط",
+    "Add Classroom": "إضافة فصل",
+    "This field is required": "هذا الحقل مطلوب",
+    "This field must be an integer": "قيمة هذا الحقل يجب أن تكون رقمًا",
+    "Edit Classroom": "تعديل الفصل"
 }

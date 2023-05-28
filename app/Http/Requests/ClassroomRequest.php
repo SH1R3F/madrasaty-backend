@@ -2,6 +2,7 @@
 
 namespace App\Http\Requests;
 
+use Illuminate\Validation\Rule;
 use Illuminate\Foundation\Http\FormRequest;
 
 class ClassroomRequest extends FormRequest
@@ -23,7 +24,11 @@ class ClassroomRequest extends FormRequest
     {
         return [
             'name'   => ['required', 'string', 'max:255'],
-            'points' => ['required', 'numeric', 'min:0']
+            'points' => [
+                Rule::when(request()->isMethod('POST'), 'required', 'nullable'),
+                'numeric',
+                'min:0'
+            ]
         ];
     }
 }
