@@ -40,8 +40,13 @@ class AuthorizationSeeder extends Seeder
             Permission::updateOrCreate(['guard_name' => 'sanctum', 'name' => 'Read classroom']),
             Permission::updateOrCreate(['guard_name' => 'sanctum', 'name' => 'Update classroom']),
             Permission::updateOrCreate(['guard_name' => 'sanctum', 'name' => 'Delete classroom']),
-        ];
 
+            // Students
+            Permission::updateOrCreate(['guard_name' => 'sanctum', 'name' => 'Create student']),
+            Permission::updateOrCreate(['guard_name' => 'sanctum', 'name' => 'Read student']),
+            Permission::updateOrCreate(['guard_name' => 'sanctum', 'name' => 'Update student']),
+            Permission::updateOrCreate(['guard_name' => 'sanctum', 'name' => 'Delete student']),
+        ];
 
         // Assign permissions to roles
         $superadmin->syncPermissions($permissions);
