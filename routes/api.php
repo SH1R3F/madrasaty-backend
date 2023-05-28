@@ -6,6 +6,7 @@ use App\Http\Controllers\Api\ApiController;
 use App\Http\Controllers\Api\RoleController;
 use App\Http\Controllers\Api\UserController;
 use App\Http\Controllers\Api\Auth\AuthController;
+use App\Http\Controllers\Api\ClassroomController;
 
 /*
 |--------------------------------------------------------------------------
@@ -46,4 +47,9 @@ Route::middleware('auth:sanctum')->group(function () {
      */
     Route::get('users/export', [UserController::class, 'export']);
     Route::resource('users', UserController::class)->except(['edit', 'create']);
+
+    /**
+     * Classrooms endpoints
+     */
+    Route::resource('classrooms', ClassroomController::class)->except(['edit', 'create']);
 });
