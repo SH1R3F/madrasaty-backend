@@ -100,6 +100,8 @@ class StudentController extends Controller
      */
     public function destroy(Student $student)
     {
+        $points = $student->notes()->sum('points');
+        $student->classroom()->update(['points' => $student->classroom->points - $points]);
         $student->delete();
 
         return response()->json([

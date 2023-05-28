@@ -6,6 +6,7 @@ use App\Models\Note;
 use App\Models\Student;
 use App\Models\Classroom;
 use Illuminate\Http\Request;
+use App\Services\NoteService;
 use App\Http\Requests\NoteRequest;
 use App\Http\Controllers\Controller;
 use App\Http\Resources\NoteResource;
@@ -41,13 +42,9 @@ class NoteController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(NoteRequest $request)
+    public function store(NoteRequest $request, NoteService $service)
     {
-        $data = $request->validated();
-        if (empty($data['classroom_id'])) {
-            $data['classroom_id'] = Student::find($data['student_id'])->classroom_id;
-        }
-        $note = $request->user()->notes()->create($data);
+        $note = $service->store($request->user(), $request->validated());
 
         return response()->json([
             'status'  => 'success',
@@ -84,6 +81,7 @@ class NoteController extends Controller
      */
     public function destroy(Note $note)
     {
+        $note->classroom()->update(['points' => $note->classroom->points - $note->points]);
         $note->delete();
 
         return response()->json([

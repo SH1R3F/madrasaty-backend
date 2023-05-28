@@ -20,7 +20,8 @@ class ClassroomController extends Controller
      */
     public function index(Request $request)
     {
-        $classrooms = Classroom::search($request->q, ['name'])
+        $classrooms = Classroom::withCount('students')
+            ->search($request->q, ['name'])
             ->order($request->options['sortBy'] ?? [])
             ->paginate($request->options['itemsPerPage'] ?? 10, ['*'], 'page', $request->options['page'] ?? 1)
             ->withQueryString();
