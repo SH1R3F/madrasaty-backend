@@ -8,12 +8,29 @@ use Illuminate\Auth\Access\Response;
 
 class NotePolicy
 {
+
+    /**
+     * Perform pre-authorization checks.
+     *
+     * @param  \App\Models\User  $user
+     * @param  string  $ability
+     * @param  mixed  $classroom
+     * @return void|bool
+     */
+    public function before(User $user, $ability, mixed $classroom)
+    {
+        if ($user->hasRole('superadmin')) {
+            return true;
+        }
+    }
+
+
     /**
      * Determine whether the user can view any models.
      */
     public function viewAny(User $user): bool
     {
-        //
+        return $user->hasPermissionTo('Read note', 'sanctum');
     }
 
     /**
@@ -21,7 +38,7 @@ class NotePolicy
      */
     public function view(User $user, Note $note): bool
     {
-        //
+        return $user->hasPermissionTo('Read note', 'sanctum');
     }
 
     /**
@@ -29,7 +46,7 @@ class NotePolicy
      */
     public function create(User $user): bool
     {
-        //
+        return $user->hasPermissionTo('Create note', 'sanctum');
     }
 
     /**
@@ -37,7 +54,7 @@ class NotePolicy
      */
     public function update(User $user, Note $note): bool
     {
-        //
+        return $user->hasPermissionTo('Update note', 'sanctum');
     }
 
     /**
@@ -45,22 +62,6 @@ class NotePolicy
      */
     public function delete(User $user, Note $note): bool
     {
-        //
-    }
-
-    /**
-     * Determine whether the user can restore the model.
-     */
-    public function restore(User $user, Note $note): bool
-    {
-        //
-    }
-
-    /**
-     * Determine whether the user can permanently delete the model.
-     */
-    public function forceDelete(User $user, Note $note): bool
-    {
-        //
+        return $user->hasPermissionTo('Delete note', 'sanctum');
     }
 }

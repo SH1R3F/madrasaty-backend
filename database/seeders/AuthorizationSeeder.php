@@ -46,6 +46,12 @@ class AuthorizationSeeder extends Seeder
             Permission::updateOrCreate(['guard_name' => 'sanctum', 'name' => 'Read student']),
             Permission::updateOrCreate(['guard_name' => 'sanctum', 'name' => 'Update student']),
             Permission::updateOrCreate(['guard_name' => 'sanctum', 'name' => 'Delete student']),
+
+            // Notes
+            Permission::updateOrCreate(['guard_name' => 'sanctum', 'name' => 'Create note']),
+            Permission::updateOrCreate(['guard_name' => 'sanctum', 'name' => 'Read note']),
+            Permission::updateOrCreate(['guard_name' => 'sanctum', 'name' => 'Update note']),
+            Permission::updateOrCreate(['guard_name' => 'sanctum', 'name' => 'Delete note']),
         ];
 
         // Assign permissions to roles
