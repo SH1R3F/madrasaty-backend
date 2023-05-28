@@ -104,5 +104,8 @@
     "Add Classroom": "Add Classroom",
     "This field is required": "This field is required",
     "This field must be an integer": "This field must be an integer",
-    "Edit Classroom": "Edit Classroom"
+    "Edit Classroom": "Edit Classroom",
+    "Students related to this classroom": "Students related to this classroom",
+    "Students": "Students",
+    "Student": "Student"
 }

@@ -104,5 +104,8 @@
     "Add Classroom": "إضافة فصل",
     "This field is required": "هذا الحقل مطلوب",
     "This field must be an integer": "قيمة هذا الحقل يجب أن تكون رقمًا",
-    "Edit Classroom": "تعديل الفصل"
+    "Edit Classroom": "تعديل الفصل",
+    "Students related to this classroom": "الطلاب المسجلين بالفصل",
+    "Students": "الطلاب",
+    "Student": "الطالب"
 }
