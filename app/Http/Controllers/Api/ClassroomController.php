@@ -49,7 +49,7 @@ class ClassroomController extends Controller
      */
     public function show(Classroom $classroom)
     {
-        return new ClassroomResource($classroom);
+        return new ClassroomResource($classroom->load('students'));
     }
 
 
