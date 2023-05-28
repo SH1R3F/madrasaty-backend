@@ -2,26 +2,24 @@
 
 namespace App\Models;
 
-use App\Models\Student;
+use App\Models\Classroom;
 use App\Traits\Orderable;
 use App\Traits\Searchable;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 
-class Classroom extends Model
+class Student extends Model
 {
     use HasFactory, Searchable, Orderable;
 
-    protected $fillable = ['name', 'points'];
-
-    public const DEFAULT_POINTS = 100;
+    protected $fillable = ['name', 'classroom_id'];
 
 
     /**
-     * Students of this classroom
+     * Classroom it belongs to
      */
-    public function students()
+    public function classroom()
     {
-        return $this->hasMany(Student::class);
+        return $this->belongsTo(Classroom::class);
     }
 }
