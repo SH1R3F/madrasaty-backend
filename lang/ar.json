@@ -114,5 +114,9 @@
     "Select Classroom": "إختر الفصل",
     "Add Student": "إضافة طالب",
     "Select classroom": "إختر الفصل",
-    "Add New Student": "إضافة طالب"
+    "Add New Student": "إضافة طالب",
+    "Edit Student": "تعديل طالب",
+    "Note deleted successfully": "تم حذف الملاحظة بنجاح",
+    "Note updated successfully": "تم تعديل الملاحظة بنجاح",
+    "Note created successfully": "تم إنشاء الملاحظة بنجاح"
 }
