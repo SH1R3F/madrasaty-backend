@@ -13,7 +13,7 @@ class UserPolicy
      *
      * @param  \App\Models\User  $user
      * @param  string  $ability
-     * @param  mixed  $role
+     * @param  mixed  $model
      * @return void|bool
      */
     public function before(User $user, $ability, mixed $model)
