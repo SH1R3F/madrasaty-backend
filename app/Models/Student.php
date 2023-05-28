@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Models\Note;
 use App\Models\Classroom;
 use App\Traits\Orderable;
 use App\Traits\Searchable;
@@ -21,5 +22,13 @@ class Student extends Model
     public function classroom()
     {
         return $this->belongsTo(Classroom::class);
+    }
+
+    /**
+     * The notes created for this student
+     */
+    public function notes()
+    {
+        return $this->hasMany(Note::class);
     }
 }

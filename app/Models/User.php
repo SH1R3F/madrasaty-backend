@@ -4,6 +4,7 @@ namespace App\Models;
 
 // use Illuminate\Contracts\Auth\MustVerifyEmail;
 
+use App\Models\Note;
 use App\Traits\Orderable;
 use App\Traits\Searchable;
 use Illuminate\Http\Request;
@@ -59,5 +60,13 @@ class User extends Authenticatable
         $query
             ->when($request->role, fn ($query, $role) => $query->whereHas('roles', fn ($query) => $query->where('name', $role)))
             ->when($request->status, fn ($query, $status) => $query->where('status', $status));
+    }
+
+    /**
+     * The notes created by this user
+     */
+    public function notes()
+    {
+        return $this->hasMany(Note::class);
     }
 }
