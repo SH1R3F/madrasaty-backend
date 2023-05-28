@@ -92,5 +92,11 @@
     "Edit user": "Edit user",
     "Classroom deleted successfully": "Classroom deleted successfully",
     "Classroom updated successfully": "Classroom updated successfully",
-    "Classroom created successfully": "Classroom created successfully"
+    "Classroom created successfully": "Classroom created successfully",
+    "Classrooms": "Classrooms",
+    "Classroom": "Classroom",
+    "You are not authorized!": "You are not authorized!",
+    "Back to Home": "Back to Home",
+    "You don't have permission to access this page. Go Home!": "You don't have permission to access this page. Go Home!",
+    "Coming Soon": "Coming Soon"
 }
