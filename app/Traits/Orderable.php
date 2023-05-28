@@ -3,6 +3,7 @@
 namespace App\Traits;
 
 use App\Models\User;
+use App\Models\Student;
 use Illuminate\Database\Eloquent\Builder;
 
 trait Orderable
@@ -37,6 +38,16 @@ trait Orderable
                         }, $order);
                     }
                     break;
+                case 'classroom':
+                    if ($this instanceof Student) {
+                        $query->orderBy(function ($query) {
+                            return $query->from('classrooms')
+                                ->whereRaw("`classrooms`.id = `students`.classroom_id")
+                                ->select('name');
+                        }, $order);
+                    }
+                    break;
+
                 default:
                     if (in_array($key, \Illuminate\Support\Facades\Schema::getColumnListing($this->getTable()))) {
                         $query->orderBy($key, $order);
