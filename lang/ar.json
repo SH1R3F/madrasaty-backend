@@ -89,5 +89,8 @@
     "Personal information": "البيانات الشخصية",
     "Leave password empty in case you don't want to change it": "أترك كلمة المرور فارغة في حالة لم ترد تغييرها",
     "My school": "مدرستي",
-    "Edit user": "تعديل المستخدم"
+    "Edit user": "تعديل المستخدم",
+    "Classroom deleted successfully": "تم حذف الفصل بنجاح",
+    "Classroom updated successfully": "تم تعديل الفصل بنجاح",
+    "Classroom created successfully": "تم إنشاء الفصل بنجاح"
 }
