@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Api\ApiController;
 use App\Http\Controllers\Api\RoleController;
 use App\Http\Controllers\Api\UserController;
+use App\Http\Controllers\Api\StudentController;
 use App\Http\Controllers\Api\Auth\AuthController;
 use App\Http\Controllers\Api\ClassroomController;
 
@@ -52,4 +53,9 @@ Route::middleware('auth:sanctum')->group(function () {
      * Classrooms endpoints
      */
     Route::resource('classrooms', ClassroomController::class)->except(['edit', 'create']);
+
+    /**
+     * Students endpoints
+     */
+    Route::resource('students', StudentController::class)->except(['edit', 'create']);
 });
