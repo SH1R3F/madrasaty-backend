@@ -118,5 +118,10 @@
     "Edit Student": "تعديل طالب",
     "Note deleted successfully": "تم حذف الملاحظة بنجاح",
     "Note updated successfully": "تم تعديل الملاحظة بنجاح",
-    "Note created successfully": "تم إنشاء الملاحظة بنجاح"
+    "Note created successfully": "تم إنشاء الملاحظة بنجاح",
+    "Notes": "الملاحظات",
+    "Note": "ملاحظة",
+    "Add Note": "إضافة ملاحظة",
+    "Add New Note": "إضافة ملاحظة",
+    "Edit Note": "تعديل ملاحظة"
 }

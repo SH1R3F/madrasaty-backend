@@ -118,5 +118,10 @@
     "Edit Student": "Edit Student",
     "Note deleted successfully": "Note deleted successfully",
     "Note updated successfully": "Note updated successfully",
-    "Note created successfully": "Note created successfully"
+    "Note created successfully": "Note created successfully",
+    "Notes": "Notes",
+    "Note": "Note",
+    "Add Note": "Add Note",
+    "Add New Note": "Add New Note",
+    "Edit Note": "Edit Note"
 }
