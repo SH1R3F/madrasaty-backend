@@ -2,6 +2,7 @@
 
 namespace App\Traits;
 
+use App\Models\Note;
 use App\Models\User;
 use App\Models\Student;
 use Illuminate\Database\Eloquent\Builder;
@@ -27,6 +28,12 @@ trait Orderable
                 case 'user':
                     if ($this instanceof User) {
                         $query->orderBy('name', $order);
+                    } else if ($this instanceof Note) {
+                        $query->orderBy(function ($query) {
+                            return $query->from('users')
+                                ->whereRaw("`users`.id = `notes`.user_id")
+                                ->select('name');
+                        }, $order);
                     }
                     break;
                 case 'role':
@@ -43,6 +50,23 @@ trait Orderable
                         $query->orderBy(function ($query) {
                             return $query->from('classrooms')
                                 ->whereRaw("`classrooms`.id = `students`.classroom_id")
+                                ->select('name');
+                        }, $order);
+                    }
+                    if ($this instanceof Note) {
+                        $query->orderBy(function ($query) {
+                            return $query->from('classrooms')
+                                ->whereRaw("`classrooms`.id = `notes`.classroom_id")
+                                ->select('name');
+                        }, $order);
+                    }
+                    break;
+
+                case 'student':
+                    if ($this instanceof Note) {
+                        $query->orderBy(function ($query) {
+                            return $query->from('students')
+                                ->whereRaw("`students`.id = `notes`.student_id")
                                 ->select('name');
                         }, $order);
                     }

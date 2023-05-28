@@ -7,7 +7,9 @@ use App\Models\Student;
 use App\Models\Classroom;
 use App\Traits\Orderable;
 use App\Traits\Searchable;
+use Illuminate\Http\Request;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Contracts\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class Note extends Model
@@ -16,6 +18,14 @@ class Note extends Model
 
     protected $fillable = ['note', 'points', 'user_id', 'student_id', 'classroom_id'];
 
+
+    /**
+     * Filter students in admin panel
+     */
+    public function scopeFilter(Builder $query, Request $request)
+    {
+        $query->when($request->classroom, fn ($query, $classroom) => $query->where('classroom_id', $classroom));
+    }
 
     // The user created this note
     public function user()
