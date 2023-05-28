@@ -3,11 +3,13 @@
 namespace App\Http\Controllers\Api;
 
 use App\Models\Note;
+use App\Models\Student;
 use App\Models\Classroom;
 use Illuminate\Http\Request;
 use App\Http\Requests\NoteRequest;
 use App\Http\Controllers\Controller;
 use App\Http\Resources\NoteResource;
+use App\Http\Resources\StudentResource;
 use App\Http\Resources\ClassroomResource;
 
 class NoteController extends Controller
@@ -31,7 +33,8 @@ class NoteController extends Controller
             ->withQueryString();
 
         return NoteResource::collection($students)->additional([
-            'classrooms' => ClassroomResource::collection(Classroom::all())
+            'classrooms' => ClassroomResource::collection(Classroom::all()),
+            'students'   => StudentResource::collection(Student::all()),
         ]);
     }
 
