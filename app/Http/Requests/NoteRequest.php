@@ -2,6 +2,7 @@
 
 namespace App\Http\Requests;
 
+use Illuminate\Validation\Rule;
 use Illuminate\Foundation\Http\FormRequest;
 
 class NoteRequest extends FormRequest
@@ -24,8 +25,8 @@ class NoteRequest extends FormRequest
         return [
             'note'         => ['required', 'string'],
             'points'       => ['required', 'numeric'],
-            'student_id'   => ['required_without:classroom_id', 'exists:students,id'],
-            'classroom_id' => ['required_without:student_id', 'exists:classrooms,id']
+            'student_id'   => [Rule::when(!$this->classroom_id, ['required_without:classroom_id', 'exists:students,id'])],
+            'classroom_id' => [Rule::when(!$this->student_id, ['required_without:student_id', 'exists:classrooms,id'])]
         ];
     }
 }

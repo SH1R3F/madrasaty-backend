@@ -5,6 +5,7 @@ namespace App\Traits;
 use App\Models\Note;
 use App\Models\User;
 use App\Models\Student;
+use App\Models\Classroom;
 use Illuminate\Database\Eloquent\Builder;
 
 trait Orderable
@@ -69,6 +70,12 @@ trait Orderable
                                 ->whereRaw("`students`.id = `notes`.student_id")
                                 ->select('name');
                         }, $order);
+                    }
+                    break;
+
+                case 'students':
+                    if ($this instanceof Classroom) {
+                        $query->orderBy('students_count', $order);
                     }
                     break;
 
