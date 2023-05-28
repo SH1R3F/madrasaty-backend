@@ -3,10 +3,12 @@
 namespace App\Http\Controllers\Api;
 
 use App\Models\Note;
+use App\Models\Classroom;
 use Illuminate\Http\Request;
 use App\Http\Requests\NoteRequest;
 use App\Http\Controllers\Controller;
 use App\Http\Resources\NoteResource;
+use App\Http\Resources\ClassroomResource;
 
 class NoteController extends Controller
 {
@@ -21,13 +23,16 @@ class NoteController extends Controller
      */
     public function index(Request $request)
     {
-        $students = Note::filter($request)
+        $students = Note::with('classroom', 'student', 'user')
+            ->filter($request)
             ->search($request->q, ['name', 'points'])
             ->order($request->options['sortBy'] ?? [])
             ->paginate($request->options['itemsPerPage'] ?? 10, ['*'], 'page', $request->options['page'] ?? 1)
             ->withQueryString();
 
-        return NoteResource::collection($students);
+        return NoteResource::collection($students)->additional([
+            'classrooms' => ClassroomResource::collection(Classroom::all())
+        ]);
     }
 
     /**

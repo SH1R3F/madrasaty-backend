@@ -3,6 +3,7 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Api\ApiController;
+use App\Http\Controllers\Api\NoteController;
 use App\Http\Controllers\Api\RoleController;
 use App\Http\Controllers\Api\UserController;
 use App\Http\Controllers\Api\StudentController;
@@ -59,4 +60,9 @@ Route::middleware('auth:sanctum')->group(function () {
      */
     Route::get('students/export', [StudentController::class, 'export']);
     Route::resource('students', StudentController::class)->except(['edit', 'create']);
+
+    /**
+     * Notes endpoints
+     */
+    Route::resource('notes', NoteController::class)->except(['edit', 'create']);
 });
