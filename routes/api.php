@@ -57,5 +57,6 @@ Route::middleware('auth:sanctum')->group(function () {
     /**
      * Students endpoints
      */
+    Route::get('students/export', [StudentController::class, 'export']);
     Route::resource('students', StudentController::class)->except(['edit', 'create']);
 });

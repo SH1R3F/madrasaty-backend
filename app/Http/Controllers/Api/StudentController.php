@@ -5,10 +5,13 @@ namespace App\Http\Controllers\Api;
 use App\Models\Student;
 use App\Models\Classroom;
 use Illuminate\Http\Request;
+use App\Exports\StudentsExport;
 use App\Http\Controllers\Controller;
+use Maatwebsite\Excel\Facades\Excel;
 use App\Http\Requests\StudentRequest;
-use App\Http\Resources\ClassroomResource;
 use App\Http\Resources\StudentResource;
+use Illuminate\Support\Facades\Storage;
+use App\Http\Resources\ClassroomResource;
 
 class StudentController extends Controller
 {
@@ -32,6 +35,25 @@ class StudentController extends Controller
 
         return StudentResource::collection($students)->additional([
             'classrooms' => ClassroomResource::collection(Classroom::all())
+        ]);
+    }
+
+    /**
+     * Export to excel.
+     */
+    public function export(Request $request)
+    {
+        $this->authorize('view', Student::class);
+
+        $users = Student::filter($request)
+            ->search($request->q, ['name'])
+            ->order($request->options['sortBy'] ?? [])
+            ->get();
+
+        Excel::store(new StudentsExport($users), $path = 'Exports/Students/Students-' . time() . '.xlsx', 'public');
+        return response()->json([
+            'status' => 'success',
+            'url'    => Storage::url($path)
         ]);
     }
 
