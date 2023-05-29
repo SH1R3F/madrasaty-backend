@@ -131,5 +131,7 @@
     "No records": "لا يوجد سجلات",
     "Show classroom": "عرض الفصل",
     "Show student": "عرض الطالب",
-    "Notes set to this classroom": "الملاحظات المسجلة على هذا الفصل"
+    "Notes set to this classroom": "الملاحظات المسجلة على هذا الفصل",
+    "Notes set to this student": "الملاحظات المسجلة على هذا الطالب",
+    "Add note for student {name}": "إضافة ملاحظة على الطالب {name}"
 }

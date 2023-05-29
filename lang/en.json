@@ -129,5 +129,7 @@
     "Moderator": "Moderator",
     "Students number": "Students number",
     "No records": "No records",
-    "Notes set to this classroom": "Notes set to this classroom"
+    "Notes set to this classroom": "Notes set to this classroom",
+    "Notes set to this student": "Notes set to this student",
+    "Add note for student {name}": "Add note for student {name}"
 }
