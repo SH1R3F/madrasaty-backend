@@ -50,7 +50,7 @@ class ClassroomController extends Controller
      */
     public function show(Classroom $classroom)
     {
-        return new ClassroomResource($classroom->load('students'));
+        return new ClassroomResource($classroom->load('students', 'notes', 'notes.student'));
     }
 
 
