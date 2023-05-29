@@ -64,10 +64,10 @@ class NoteController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(NoteRequest $request, Note $note)
+    public function update(NoteRequest $request, Note $note, NoteService $service)
     {
         $data = $request->validated();
-        $note->update($data);
+        $service->update($note, $data);
 
         return response()->json([
             'status'  => 'success',

@@ -22,4 +22,18 @@ class NoteService
 
         return $note;
     }
+
+    /**
+     * Update note & update its classroom points
+     */
+    public function update(Note $note, array $data): Note
+    {
+        $points = $note->points;
+
+        $note->update($data);
+
+        $note->classroom()->update(['points' => $note->classroom->points - $points + $data['points']]);
+
+        return $note;
+    }
 }
