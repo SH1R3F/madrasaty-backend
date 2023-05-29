@@ -36,7 +36,10 @@ class RoleResource extends JsonResource
         $perms = [];
         $names = [
             'role' => 'Roles',
-            'user' => 'Users'
+            'user' => 'Users',
+            'classroom' => 'Classrooms',
+            'student' => 'Students',
+            'note' => 'Notes',
         ];
         $permissions->map(function ($permission) use (&$perms, $names) {
             foreach ($names as $name => $value) {
