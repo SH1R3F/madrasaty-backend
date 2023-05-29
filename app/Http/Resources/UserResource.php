@@ -21,6 +21,8 @@ class UserResource extends JsonResource
                 'avatar'   => asset($this->avatar ?? 'assets/img/user.webp'),
                 'role'     => $this->roles->first()?->name ?? null,
                 'role_id'  => $this->roles->first()?->id ?? null,
+                'editable'  => $request->user()->can('update', $this->resource),
+                'deletable' => $request->user()->can('delete', $this->resource),
             ]
         );
     }

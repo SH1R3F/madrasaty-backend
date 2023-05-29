@@ -21,7 +21,7 @@ class UserPolicy
         // Owner of webside can never be deleted or disabled
         if ($ability === 'delete' && $model->id === 1) return false;
 
-        if ($user->hasRole('superadmin')) {
+        if ($user->hasRole('مدير الموقع')) {
             return true;
         }
     }

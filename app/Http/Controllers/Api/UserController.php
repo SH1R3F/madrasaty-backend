@@ -34,7 +34,7 @@ class UserController extends Controller
         return UserResource::collection($users)->additional([
             'stats' => [
                 'total'       => User::count(),
-                'superadmins' => User::whereHas('roles', fn ($query) => $query->where('name', 'superadmin'))->count(),
+                'superadmins' => User::whereHas('roles', fn ($query) => $query->where('name', 'مدير الموقع'))->count(),
                 'active'      => User::where('status', 1)->count(),
                 'inactive'    => User::where('status', 0)->count(),
             ]

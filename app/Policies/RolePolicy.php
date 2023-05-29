@@ -19,11 +19,11 @@ class RolePolicy
      */
     public function before(User $user, $ability, mixed $role)
     {
-        if ($ability === 'delete' && in_array($role->name, ['superadmin'])) {
+        if ($ability === 'delete' && in_array($role->name, ['مدير الموقع'])) {
             return false;
         }
 
-        if ($user->hasRole('superadmin')) {
+        if ($user->hasRole('مدير الموقع')) {
             return true;
         }
     }

@@ -19,7 +19,7 @@ class NotePolicy
      */
     public function before(User $user, $ability, mixed $classroom)
     {
-        if ($user->hasRole('superadmin')) {
+        if ($user->hasRole('مدير الموقع')) {
             return true;
         }
     }

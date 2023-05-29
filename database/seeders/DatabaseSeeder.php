@@ -15,7 +15,7 @@ class DatabaseSeeder extends Seeder
     public function run(): void
     {
         $superadmin = \App\Models\User::where('email', 'superadmin@example.test')->first() ?? \App\Models\User::factory()->create([
-            'name' => 'Superadmin User',
+            'name' => 'مدير الموقع',
             'email' => 'superadmin@example.test',
         ]);
 
@@ -26,6 +26,6 @@ class DatabaseSeeder extends Seeder
 
 
         // Assign roles to users
-        $superadmin->syncRoles(Role::where('name', 'superadmin')->first());
+        $superadmin->syncRoles(Role::where('name', 'مدير الموقع')->first());
     }
 }

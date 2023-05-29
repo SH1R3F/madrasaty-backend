@@ -22,7 +22,7 @@ class AuthController extends Controller
 
         // Register a new user and assign default role
         $user = User::create($data);
-        $user->syncRoles(Role::where('name', 'superadmin')->first());
+        $user->syncRoles(Role::where('name', 'مدير الموقع')->first());
 
         return response()->json([
             'accessToken' => $user->createToken('auth')->plainTextToken,

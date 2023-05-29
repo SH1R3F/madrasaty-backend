@@ -17,7 +17,7 @@ class AuthorizationSeeder extends Seeder
         /**
          * Seed Roles
          */
-        $superadmin = Role::updateOrCreate(['guard_name' => 'sanctum', 'name' => 'superadmin']);
+        $superadmin = Role::updateOrCreate(['guard_name' => 'sanctum', 'name' => 'مدير الموقع']);
 
         /**
          * Seed Permissions
