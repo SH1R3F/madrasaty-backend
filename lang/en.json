@@ -131,5 +131,7 @@
     "No records": "No records",
     "Notes set to this classroom": "Notes set to this classroom",
     "Notes set to this student": "Notes set to this student",
-    "Add note for student {name}": "Add note for student {name}"
+    "Add note for student {name}": "Add note for student {name}",
+    "Page Not Found": "Page Not Found",
+    "We couldn't find the page you are looking for.": "We couldn't find the page you are looking for."
 }

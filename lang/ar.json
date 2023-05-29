@@ -133,5 +133,7 @@
     "Show student": "عرض الطالب",
     "Notes set to this classroom": "الملاحظات المسجلة على هذا الفصل",
     "Notes set to this student": "الملاحظات المسجلة على هذا الطالب",
-    "Add note for student {name}": "إضافة ملاحظة على الطالب {name}"
+    "Add note for student {name}": "إضافة ملاحظة على الطالب {name}",
+    "Page Not Found": "الصفحة غير موجودة",
+    "We couldn't find the page you are looking for.": "لم نستطع إيجاد الصفحة التي تبحث عنها."
 }
