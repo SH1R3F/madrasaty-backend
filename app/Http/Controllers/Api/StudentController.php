@@ -77,7 +77,7 @@ class StudentController extends Controller
      */
     public function show(Student $student)
     {
-        return new StudentResource($student);
+        return new StudentResource($student->load('notes', 'notes.student', 'classroom'));
     }
 
     /**

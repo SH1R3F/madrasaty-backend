@@ -3,6 +3,7 @@
 namespace App\Http\Resources;
 
 use Illuminate\Http\Request;
+use App\Http\Resources\NoteResource;
 use App\Http\Resources\ClassroomResource;
 use Illuminate\Http\Resources\Json\JsonResource;
 
@@ -18,7 +19,8 @@ class StudentResource extends JsonResource
         return array_merge(
             parent::toArray($request),
             [
-                'classroom' => new ClassroomResource($this->whenLoaded('classroom'))
+                'classroom' => new ClassroomResource($this->whenLoaded('classroom')),
+                'notes'     => NoteResource::collection($this->whenLoaded('notes'))
             ]
         );
     }
