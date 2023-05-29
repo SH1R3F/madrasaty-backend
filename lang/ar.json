@@ -128,5 +128,8 @@
     "Edit Note": "تعديل ملاحظة",
     "Moderator": "المشرف",
     "Students number": "عدد الطلاب",
-    "No records": "لا يوجد سجلات"
+    "No records": "لا يوجد سجلات",
+    "Show classroom": "عرض الفصل",
+    "Show student": "عرض الطالب",
+    "Notes set to this classroom": "الملاحظات المسجلة على هذا الفصل"
 }
