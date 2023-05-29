@@ -133,5 +133,11 @@
     "Notes set to this student": "Notes set to this student",
     "Add note for student {name}": "Add note for student {name}",
     "Page Not Found": "Page Not Found",
-    "We couldn't find the page you are looking for.": "We couldn't find the page you are looking for."
+    "We couldn't find the page you are looking for.": "We couldn't find the page you are looking for.",
+    "All rights reserved": "All rights reserved",
+    "Here you can manage site users and their data": "Here you can manage site users and their data",
+    "Here you can manage site roles and permissions": "Here you can manage site roles and permissions",
+    "Classrooms registered on the site": "Classrooms registered on the site",
+    "Students registered on the site": "Students registered on the site",
+    "Notes registered on the site": "Notes registered on the site"
 }

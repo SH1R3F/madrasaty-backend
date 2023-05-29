@@ -135,5 +135,11 @@
     "Notes set to this student": "الملاحظات المسجلة على هذا الطالب",
     "Add note for student {name}": "إضافة ملاحظة على الطالب {name}",
     "Page Not Found": "الصفحة غير موجودة",
-    "We couldn't find the page you are looking for.": "لم نستطع إيجاد الصفحة التي تبحث عنها."
+    "We couldn't find the page you are looking for.": "لم نستطع إيجاد الصفحة التي تبحث عنها.",
+    "All rights reserved": "جميع الحقوق محفوظة",
+    "Here you can manage site roles and permissions": "هنا بإمكانك التحكم في أدوار الموقع والصلاحيات",
+    "Here you can manage site users and their data": "هنا بإمكانك التحكم في مستخدمي الموقع وبياناتهم",
+    "Classrooms registered on the site": "الفصول المسجلة على الموقع",
+    "Students registered on the site": "الطلاب المسجلين على الموقع",
+    "Notes registered on the site": "الملاحظات المسجلة على الموقع"
 }
