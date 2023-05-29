@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>مدرستي</title>
     <link rel="stylesheet" type="text/css" href="/loader.css" />
-    <script type="module" crossorigin src="/assets/index-9a6c548a.js"></script>
+    <script type="module" crossorigin src="/assets/index-6e7957c8.js"></script>
     <link rel="stylesheet" href="/assets/index-63ce5804.css">
 </head>
 
