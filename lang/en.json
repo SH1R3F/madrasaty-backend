@@ -151,5 +151,7 @@
     "Here you can manage site roles and permissions": "Here you can manage site roles and permissions",
     "Classrooms registered on the site": "Classrooms registered on the site",
     "Students registered on the site": "Students registered on the site",
-    "Notes registered on the site": "Notes registered on the site"
+    "Notes registered on the site": "Notes registered on the site",
+    "Import": "Import",
+    "Students imported successfully": "Students imported successfully"
 }

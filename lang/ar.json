@@ -153,5 +153,7 @@
     "Here you can manage site users and their data": "هنا بإمكانك التحكم في مستخدمي الموقع وبياناتهم",
     "Classrooms registered on the site": "الفصول المسجلة على الموقع",
     "Students registered on the site": "الطلاب المسجلين على الموقع",
-    "Notes registered on the site": "الملاحظات المسجلة على الموقع"
+    "Notes registered on the site": "الملاحظات المسجلة على الموقع",
+    "Import": "إستيراد",
+    "Students imported successfully": "تم استيراد الطلاب بنجاح"
 }
