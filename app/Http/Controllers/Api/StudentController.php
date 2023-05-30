@@ -6,6 +6,7 @@ use App\Models\Student;
 use App\Models\Classroom;
 use Illuminate\Http\Request;
 use App\Exports\StudentsExport;
+use App\Imports\StudentsImport;
 use App\Http\Controllers\Controller;
 use Maatwebsite\Excel\Facades\Excel;
 use App\Http\Requests\StudentRequest;
@@ -54,6 +55,23 @@ class StudentController extends Controller
         return response()->json([
             'status' => 'success',
             'url'    => Storage::url($path)
+        ]);
+    }
+
+    /**
+     * Import from excel.
+     */
+    public function import(Request $request)
+    {
+        $this->authorize('create', Student::class);
+
+        $request->validate(['file' => ['required', 'file', 'mimes:csv,xlsx,xls']]);
+
+        Excel::import(new StudentsImport, request()->file('file'));
+
+        return response()->json([
+            'status'  => 'success',
+            'message' => __('Students imported successfully')
         ]);
     }
 
