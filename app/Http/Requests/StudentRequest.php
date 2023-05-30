@@ -34,7 +34,12 @@ class StudentRequest extends FormRequest
                     Rule::unique('students')->ignore($this->student),
                 )
             ],
-            'password' => ['required', 'string', 'min:8', 'max:255']
+            'password' => [
+                Rule::when(request()->isMethod('POST'), 'required', 'nullable'),
+                'string',
+                'min:8',
+                'max:255'
+            ]
         ];
     }
 }

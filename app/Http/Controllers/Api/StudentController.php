@@ -29,7 +29,7 @@ class StudentController extends Controller
     {
         $students = Student::with('classroom')
             ->filter($request)
-            ->search($request->q, ['name'])
+            ->search($request->q, ['name', 'email'])
             ->order($request->options['sortBy'] ?? [])
             ->paginate($request->options['itemsPerPage'] ?? 10, ['*'], 'page', $request->options['page'] ?? 1)
             ->withQueryString();
@@ -47,7 +47,7 @@ class StudentController extends Controller
         $this->authorize('view', Student::class);
 
         $users = Student::filter($request)
-            ->search($request->q, ['name'])
+            ->search($request->q, ['name', 'email'])
             ->order($request->options['sortBy'] ?? [])
             ->get();
 
@@ -81,6 +81,7 @@ class StudentController extends Controller
     public function store(StudentRequest $request)
     {
         $data = $request->Validated();
+        $data['password'] = bcrypt($data['password']);
         $student = Student::create($data);
 
         return response()->json([
@@ -104,6 +105,9 @@ class StudentController extends Controller
     public function update(StudentRequest $request, Student $student)
     {
         $data = $request->Validated();
+        if (!empty($data['password'])) {
+            $data['password'] = bcrypt($data['password']);
+        }
         $student->update($data);
 
         return response()->json([
