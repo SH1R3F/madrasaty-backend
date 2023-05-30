@@ -26,6 +26,7 @@ class StudentsExport implements FromCollection, WithHeadings, WithMapping, WithE
             '#',
             __('Student'),
             __('Classroom'),
+            __('Email'),
         ];
     }
 
@@ -35,6 +36,7 @@ class StudentsExport implements FromCollection, WithHeadings, WithMapping, WithE
             ++$this->row,
             $student->name,
             $student->classroom->name,
+            $student->email,
         ];
     }
 
