@@ -20,7 +20,7 @@ class StudentResource extends JsonResource
             parent::toArray($request),
             [
                 'classroom' => new ClassroomResource($this->whenLoaded('classroom')),
-                'notes'     => NoteResource::collection($this->whenLoaded('notes'))
+                'notes'     => NoteResource::collection($this->whenLoaded('notes')),
             ]
         );
     }

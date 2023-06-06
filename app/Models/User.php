@@ -5,6 +5,7 @@ namespace App\Models;
 // use Illuminate\Contracts\Auth\MustVerifyEmail;
 
 use App\Models\Note;
+use App\Models\Classroom;
 use App\Traits\Orderable;
 use App\Traits\Searchable;
 use Illuminate\Http\Request;
@@ -30,6 +31,7 @@ class User extends Authenticatable
         'avatar',
         'status',
         'password',
+        'classroom_id',
     ];
 
     /**
@@ -53,13 +55,22 @@ class User extends Authenticatable
     ];
 
     /**
+     * Get only the students users
+     */
+    public static function students()
+    {
+        return self::with('classroom')->whereHas('roles', fn(Builder $query) => $query->where('name', 'طالب'));
+    }
+
+    /**
      * Filter users in admin panel
      */
     public function scopeFilter(Builder $query, Request $request)
     {
         $query
             ->when($request->role, fn ($query, $role) => $query->whereHas('roles', fn ($query) => $query->where('name', $role)))
-            ->when($request->status, fn ($query, $status) => $query->where('status', $status));
+            ->when($request->status, fn ($query, $status) => $query->where('status', $status))
+            ->when($request->classroom, fn ($query, $classroom) => $query->where('classroom_id', $classroom));
     }
 
     /**
@@ -67,6 +78,14 @@ class User extends Authenticatable
      */
     public function notes()
     {
-        return $this->hasMany(Note::class);
+        return $this->getRoleNames()[0] == 'طالب' ? $this->hasMany(Note::class, 'student_id') : $this->hasMany(Note::class);
+    }
+
+    /**
+     * The classroom it belongs to
+     */
+    public function classroom()
+    {
+        return $this->belongsTo(Classroom::class);
     }
 }

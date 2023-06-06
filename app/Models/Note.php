@@ -38,7 +38,7 @@ class Note extends Model
     // The student this note is for
     public function student()
     {
-        return $this->belongsTo(Student::class);
+        return $this->belongsTo(Student::class, 'student_id');
     }
 
     // The classroom this note is for

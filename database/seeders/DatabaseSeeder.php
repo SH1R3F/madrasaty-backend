@@ -14,18 +14,24 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
+        // Seed roles and permissions
+        $this->call(AuthorizationSeeder::class);
+
         $superadmin = \App\Models\User::where('email', 'superadmin@example.test')->first() ?? \App\Models\User::factory()->create([
             'name' => 'مدير الموقع',
             'email' => 'superadmin@example.test',
         ]);
 
-        \App\Models\User::factory(10)->create();
+        $student = \App\Models\User::where('email', 'student@example.test')->first() ?? \App\Models\User::factory()->create([
+            'name' => 'طالب',
+            'email' => 'student@example.test'
+        ]);
 
-        // Seed roles and permissions
-        $this->call(AuthorizationSeeder::class);
+        \App\Models\User::factory(10)->create();
 
 
         // Assign roles to users
         $superadmin->syncRoles(Role::where('name', 'مدير الموقع')->first());
+        $student->syncRoles(Role::where('name', 'طالب')->first());
     }
 }

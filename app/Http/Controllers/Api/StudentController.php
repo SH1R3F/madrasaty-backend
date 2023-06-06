@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Api;
 
+use App\Models\User;
 use App\Models\Student;
 use App\Models\Classroom;
 use Illuminate\Http\Request;
@@ -27,7 +28,7 @@ class StudentController extends Controller
      */
     public function index(Request $request)
     {
-        $students = Student::with('classroom')
+        $students = User::students()
             ->filter($request)
             ->search($request->q, ['name', 'email'])
             ->order($request->options['sortBy'] ?? [])

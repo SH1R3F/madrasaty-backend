@@ -3,51 +3,26 @@
 namespace App\Models;
 
 use App\Models\Note;
+use App\Models\User;
 use App\Models\Classroom;
-use App\Traits\Orderable;
-use App\Traits\Searchable;
 use Illuminate\Http\Request;
-use Laravel\Sanctum\HasApiTokens;
-use Illuminate\Database\Eloquent\Model;
-use Illuminate\Notifications\Notifiable;
 use Illuminate\Database\Eloquent\Builder;
-use Illuminate\Database\Eloquent\Factories\HasFactory;
 
-class Student extends Model
+class Student extends User
 {
-    use HasApiTokens, HasFactory, Notifiable, Searchable, Orderable;
+    protected $table = 'users';
 
     /**
-     * The attributes that are mass assignable.
-     *
-     * @var array<int, string>
+     * The "booted" method of the model.
      */
-    protected $fillable = [
-        'name',
-        'classroom_id',
-        'email',
-        'password'
-    ];
+    protected static function boot(): void
+    {
+        parent::boot();
 
-    /**
-     * The attributes that should be hidden for serialization.
-     *
-     * @var array<int, string>
-     */
-    protected $hidden = [
-        'password',
-        'remember_token',
-    ];
-
-    /**
-     * The attributes that should be cast.
-     *
-     * @var array<string, string>
-     */
-    protected $casts = [
-        'email_verified_at' => 'datetime',
-        'password' => 'hashed',
-    ];
+        static::addGlobalScope('student', function (Builder $builder) {
+            return $builder->whereHas('roles', fn ($query) => $query->where('name', 'طالب'));
+        });
+    }
 
     /**
      * Filter students in admin panel
@@ -62,7 +37,7 @@ class Student extends Model
      */
     public function classroom()
     {
-        return $this->belongsTo(Classroom::class);
+        return $this->belongsTo(Classroom::class, 'student_id');
     }
 
     /**
@@ -70,6 +45,6 @@ class Student extends Model
      */
     public function notes()
     {
-        return $this->hasMany(Note::class);
+        return $this->hasMany(Note::class, 'student_id');
     }
 }

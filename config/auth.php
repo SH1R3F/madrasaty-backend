@@ -43,11 +43,7 @@ return [
         'sanctum' => [
             'driver' => 'sanctum',
             'provider' => 'users',
-        ],
-        'students' => [
-            'driver' => 'sanctum',
-            'provider' => 'students',
-        ],
+        ]
     ],
 
     /*
@@ -71,11 +67,7 @@ return [
         'users' => [
             'driver' => 'eloquent',
             'model' => App\Models\User::class,
-        ],
-        'students' => [
-            'driver' => 'eloquent',
-            'model' => App\Models\Student::class,
-        ],
+        ]
     ],
 
     /*
@@ -103,13 +95,7 @@ return [
             'table' => 'password_reset_tokens',
             'expire' => 60,
             'throttle' => 60,
-        ],
-        'students' => [
-            'provider' => 'students',
-            'table' => 'password_reset_tokens',
-            'expire' => 60,
-            'throttle' => 60,
-        ],
+        ]
     ],
 
     /*

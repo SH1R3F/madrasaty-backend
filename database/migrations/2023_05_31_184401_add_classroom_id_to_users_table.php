@@ -11,18 +11,9 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('students', function (Blueprint $table) {
-            $table->id();
-            $table->string('name');
-            $table->unsignedBigInteger('classroom_id');
-
-            $table->string('email')->unique();
-            $table->timestamp('email_verified_at')->nullable();
-            $table->string('password');
-            $table->rememberToken();
-
-            $table->timestamps();
-
+        Schema::table('users', function (Blueprint $table) {
+            // For students and teachers assigned to a classroom
+            $table->unsignedBigInteger('classroom_id')->nullable();
             $table->foreign('classroom_id')->references('id')->on('classrooms')->onDelete('cascade')->onUpdate('cascade');
         });
     }
@@ -32,6 +23,8 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('students');
+        Schema::table('users', function (Blueprint $table) {
+            $table->dropColumn('classroom_id');
+        });
     }
 };
